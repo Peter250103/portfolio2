@@ -1,0 +1,38 @@
+.customCursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  background: black;
+  box-shadow: 0 0 0 2px black;
+}
+
+.customCursor::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  background: transparent;
+  border-radius: 50%;
+}
+
+/* Verstecken Sie den Standard-Cursor */
+body {
+  cursor: none;
+}
+
+/* Deaktivieren Sie den benutzerdefinierten Cursor auf Mobilgeräten */
+@media (max-width: 768px) {
+  .customCursor {
+    display: none;
+  }
+  body {
+    cursor: auto;
+  }
+}
